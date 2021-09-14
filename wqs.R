@@ -29,14 +29,14 @@ mix_name<-names(nh1)[13:26]
 # WQS index for positive association
 library(gWQS)
 gwqs1 <- gwqs(egfr ~ wqs + factor(cycle)+RIAGENDR+RIDAGEYR+factor(RIDRETH1)+factor(smk)+factor(incm_g)+bmi+factor(act)+lnucr,
-              mix_name = mix_name, data = nh, 
+              mix_name = mix_name, data = nh1, 
               q = 10, validation = 0.6, b = 100, b1_pos = T, 
               b1_constr = T, family = "gaussian", seed = 2021)
 summary(gwqs1)
 
 # WQS index for negative association
 gwqs2 <- gwqs(egfr ~ wqs + factor(cycle)+RIAGENDR+RIDAGEYR+factor(RIDRETH1)+factor(smk)+factor(incm_g)+bmi+factor(act)+lnucr,
-              mix_name = mix_name, data = nh, 
+              mix_name = mix_name, data = nh1, 
               q = 10, validation = 0.6, b = 100, b1_pos = F, 
               b1_constr = T, family = "gaussian", seed = 2021)
 summary(gwqs2)
