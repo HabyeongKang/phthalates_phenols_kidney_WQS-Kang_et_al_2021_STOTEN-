@@ -23,24 +23,6 @@ nh1 <- nh %>% select(SEQN, cycle, RIAGENDR, RIDAGEYR, RIDRETH1, smk, incm_g, bmi
 dim(nh1)
 names(nh1)
 
-# make dummy variables for the categorical variables 
-nh1$cycle2=ifelse(nh1$cycle==708,1,0)
-nh1$cycle3=ifelse(nh1$cycle==910,1,0)
-nh1$cycle4=ifelse(nh1$cycle==1112,1,0)
-nh1$cycle5=ifelse(nh1$cycle==1314,1,0)
-nh1$cycle6=ifelse(nh1$cycle==1516,1,0)
-nh1$race2=ifelse(nh1$RIDRETH1==2,1,0)
-nh1$race3=ifelse(nh1$RIDRETH1==3,1,0)
-nh1$race4=ifelse(nh1$RIDRETH1==4,1,0)
-nh1$race5=ifelse(nh1$RIDRETH1==5,1,0)
-nh1$smk2=ifelse(nh1$smk==2,1,0)
-nh1$smk3=ifelse(nh1$smk==3,1,0)
-nh1$incm_g2=ifelse(nh1$incm_g==2,1,0)
-nh1$incm_g3=ifelse(nh1$incm_g==3,1,0)
-nh1$act2=ifelse(nh1$act==2,1,0)
-nh1$act3=ifelse(nh1$act==3,1,0)
-attach(nh1)
-
 # input name of the chemical variables into "mix_name"
 mix_name<-names(nh1)[13:26]
 
