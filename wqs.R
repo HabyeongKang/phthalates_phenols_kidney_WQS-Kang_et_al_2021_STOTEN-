@@ -1,7 +1,7 @@
 ##########################################################################################
 #                                                                                        #
 # R code for generating WQS index in Kang et al., 2021, Science of the Total Environment #
-#                  Contact: Habyeong Kang (habyeongkang@gmail.com)                      #
+#                  Contact: Habyeong Kang (habyeongkang@gmail.com)                       #
 #                                                                                        #
 ##########################################################################################
 
