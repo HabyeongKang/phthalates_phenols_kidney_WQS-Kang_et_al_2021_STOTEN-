@@ -6,7 +6,7 @@
 ##########################################################################################
 
 
-# load the file
+# load the data
 setwd("C:\\file path")
 library(haven)
 nh <- read_sas("nhanes.sas7bdat")
@@ -43,8 +43,22 @@ summary(gwqs2)
 
 # bar plot
 gwqs_barplot(gwqs2)
+
+# weight
+gwqs2$final_weights
+
 # scatter plot y vs wqs
 gwqs_scatterplot(gwqs2)
+
 # scatter plot residuals vs fitted values
 gwqs_fitted_vs_resid(gwqs2)
 
+# combine the previous data set with WQS index
+gwqs2.1 <- gwqs2$data %>% select('wqs')
+
+nh2 <- cbind(nh1,gwqs2.1)
+dim(nh2)
+names(nh2)
+
+# save the data
+write_sas(nh2,"wqs.sas7bdat")
